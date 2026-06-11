@@ -26,7 +26,7 @@ export default function ValleCauca() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
             <img
-              src={`${import.meta.env.BASE_URL}valle-cauca.jpg`}
+              src="src/components/IMG/rio-cauca.jpg"
               alt="Valle del Cauca"
               className="w-full h-80 object-cover"
             />
@@ -45,7 +45,7 @@ export default function ValleCauca() {
                 Autoridad Ambiental
               </h4>
               <p className="text-gray-700 text-sm">
-                En el Valle del Cauca opera el <strong>Area Metropolitana del Valle de Aburra (AMVA)</strong> como 
+                En el Valle del Cauca opera el <strong>Area Metropolitana del Valle de Aburra (AMVA)</strong> como
                 autoridad ambiental para concesiones, ademas de la <strong>CVC</strong> como Corporacion Autonoma Regional.
               </p>
             </div>
@@ -56,7 +56,7 @@ export default function ValleCauca() {
                 Sentencia No. 192
               </h4>
               <p className="text-gray-700 text-sm">
-                El Tribunal Administrativo del Valle del Cauca emitio la <strong>sentencia No. 192</strong> sobre 
+                El Tribunal Administrativo del Valle del Cauca emitio la <strong>sentencia No. 192</strong> sobre
                 el derecho humano al agua, estableciendo importantes precedentes para la region.
               </p>
             </div>
