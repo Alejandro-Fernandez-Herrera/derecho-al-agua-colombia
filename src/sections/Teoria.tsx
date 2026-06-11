@@ -95,15 +95,17 @@ export default function Teoria() {
               <h4 className="font-bold text-gray-900 mb-4">Linea de Tiempo - Reconocimiento</h4>
               <div className="space-y-4">
                 {[
-                  { year: '1948', text: 'Declaracion Universal de Derechos Humanos menciona agua implicitamente' },
-                  { year: '2002', text: 'Comite de Derechos Economicos emite Observacion General No. 15' },
-                  { year: '2010', text: 'ONU reconoce formalmente el derecho al agua (Res. A/64/L.63/Rev.1)' },
-                  { year: '2012', text: 'Colombia reforma Art. 4 de la Constitucion para incluir el derecho al agua' },
+                  { year: '1948', text: 'Declaracion Universal de Derechos Humanos: derecho a un nivel de vida adecuado, incluye el agua de forma implicita' },
+                  { year: '1992', text: 'Corte Constitucional (T-570/92) protege el agua via doctrina de conexidad con la vida y la salud' },
+                  { year: '2002', text: 'Comite de Derechos Economicos (ONU) emite Observacion General No. 15: define las 5 caracteristicas esenciales del derecho' },
+                  { year: '2010', text: 'ONU reconoce formalmente el derecho humano al agua (Res. A/64/L.63/Rev.1)' },
+                  { year: '2010', text: 'Corte Constitucional (T-418/10) declara el agua potable como Derecho Fundamental Autonomo' },
+                  { year: '2011', text: 'Corte Constitucional (T-740/11) prohibe corte total a sujetos vulnerables y ordena garantizar Minimo Vital de agua' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="flex flex-col items-center">
                       <div className="w-3 h-3 bg-[#9ACD32] rounded-full" />
-                      {i < 3 && <div className="w-0.5 h-full bg-gray-200" />}
+                      {i < 5 && <div className="w-0.5 h-full bg-gray-200" />}
                     </div>
                     <div className="pb-4">
                       <span className="font-bold text-[#1B4D3E] text-sm">{item.year}</span>
