@@ -2,14 +2,14 @@ import { AlertTriangle, Users, TrendingUp, Globe2 } from 'lucide-react';
 
 const stats = [
   { icon: Users, value: '2,000M', label: 'Personas sin acceso a agua potable segura', suffix: '+' },
-  { icon: AlertTriangle, value: '5M', label: 'Colombianos sin acceso a agua potable', suffix: '+' },
+  { icon: AlertTriangle, value: '7M', label: 'Colombianos sin acceso a agua potable', suffix: '+' },
   { icon: TrendingUp, value: '40%', label: 'De la poblacion mundial afectada por escasez en 2030', suffix: '' },
   { icon: Globe2, value: '700M', label: 'Personas que podrian desplazarse por falta de agua', suffix: '+' },
 ];
 
 const desafios = [
   'Escasez de agua y aumento de la contaminacion son desafios de origen social y politico',
-  'Mas de 5 millones de colombianos aun no tienen acceso a agua potable',
+  'Alrededor de 7 millones de colombianos aun no tienen acceso a agua potable',
   'El suministro debe ser continuo y suficiente para cubrir necesidades basicas',
   'Cambio climatico acelera la reduccion de fuentes hidricas disponibles',
   'La contaminacion industrial afecta la calidad del agua en rios y acuiferos',
@@ -90,7 +90,7 @@ export default function Mundial() {
               <p className="text-white/90 text-sm leading-relaxed">
                 La escasez de agua afecta desproporcionadamente a comunidades vulnerables
                 y en desarrollo. Se estima que para 2025, la mitad de la poblacion mundial
-                vivira en zonas con escasez de agua.
+                vivió en zonas con escasez de agua.
               </p>
             </div>
           </div>
