@@ -18,7 +18,7 @@ const resumenData = [
   {
     icon: Scale,
     title: 'Colombia',
-    desc: 'Reconocido constitucionalmente desde 2012; Corte protege minimo vital pero con limitaciones.',
+    desc: 'Reconocido por Bloque de Constitucionalidad y jurisprudencia (T-418/10); Corte protege minimo vital pero con limitaciones.',
     color: 'bg-purple-50 border-purple-200',
     iconColor: 'text-purple-600',
   },

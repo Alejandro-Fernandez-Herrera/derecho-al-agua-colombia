@@ -68,7 +68,7 @@ export default function Colombia() {
                 <h3 className="text-2xl font-bold">Si, pero con matices</h3>
               </div>
               <p className="text-white/90 text-sm leading-relaxed mb-6">
-                El derecho humano al agua esta reconocido constitucionalmente desde 2012,
+                El derecho humano al agua esta reconocido por Bloque de Constitucionalidad y jurisprudencia de la Corte Constitucional (T-418/10),
                 pero su implementacion efectiva enfrenta multiples desafios en el territorio nacional.
               </p>
               <div className="flex items-center gap-2 text-[#9ACD32]">

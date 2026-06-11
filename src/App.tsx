@@ -18,9 +18,7 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <div className="pt-24">
-          <Teoria />
-        </div>
+        <Teoria />
         <Mundial />
         <Colombia />
         <Vertimientos />
