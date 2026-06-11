@@ -1,121 +1,219 @@
-import { CheckCircle, BookOpen, Calendar, RefreshCw, AlertCircle, FileCheck } from 'lucide-react';
+import { useState } from 'react';
+import { CheckCircle, BookOpen, FileText, Droplets, Factory, Zap, Waves, Home, ChevronDown, ChevronUp, Building2, AlertCircle } from 'lucide-react';
 
-const capitulos = [
-  { nombre: 'Concesion de aguas', contenido: 'Regula uso y aprovechamiento de recursos hidricos', articulo: '2.2.3.2.7.1' },
-  { nombre: 'Permisos de vertimientos', contenido: 'Autoriza descargas a aguas superficiales, marinas o suelo', articulo: '2.2.3.3.5.1' },
-  { nombre: 'Relacion concesion-vertimiento', contenido: 'Si el aprovechamiento genera vertimientos, se requiere ambos', articulo: '2.2.3.2.20.2' },
+const tags = ['Decreto Único Reglamentario', 'Sector Ambiente', 'Recursos hídricos', 'CAR'];
+
+const queRegula = [
+  'Concesiones de agua superficial y subterránea',
+  'Permisos de vertimiento de aguas residuales',
+  'Gestión ambiental y protección del recurso hídrico',
+  'Recursos hídricos superficiales y subterráneos',
 ];
 
-const disposiciones = [
-  'Aprovechamiento de aguas subterraneas requiere concesion excepto usos domesticos sin bombeo',
-  'Aprovechamiento de aguas lluvias requiere concesion cuando forman cauce natural que atraviesa varios predios',
-  'Concesiones solo pueden prorrogarse durante el ultimo ano del periodo otorgado',
-  'En caso de tradicion del predio, nuevo propietario debe solicitar traspaso dentro de 60 dias',
-  'Toda concesion requiere Programa de Uso Eficiente y Ahorro del Agua (PUEAA)',
+type Uso = {
+  id: string;
+  label: string;
+  descripcion: string;
+  icon: React.ReactNode;
+};
+
+const usos: Uso[] = [
+  {
+    id: 'domestico',
+    label: 'Doméstico',
+    descripcion: 'Agua para consumo humano, preparación de alimentos e higiene personal en el hogar.',
+    icon: <Home className="w-5 h-5" />,
+  },
+  {
+    id: 'agropecuario',
+    label: 'Agropecuario',
+    descripcion: 'Riego de cultivos, cría de ganado y actividades del sector agrícola y pecuario.',
+    icon: <Waves className="w-5 h-5" />,
+  },
+  {
+    id: 'industrial',
+    label: 'Industrial',
+    descripcion: 'Procesos de manufactura, enfriamiento industrial y actividades productivas.',
+    icon: <Factory className="w-5 h-5" />,
+  },
+  {
+    id: 'recreativo',
+    label: 'Recreativo',
+    descripcion: 'Piscinas, parques acuáticos, actividades deportivas y turismo.',
+    icon: <Droplets className="w-5 h-5" />,
+  },
+  {
+    id: 'energia',
+    label: 'Energía',
+    descripcion: 'Generación de energía hidroeléctrica mediante caudales de ríos y embalses.',
+    icon: <Zap className="w-5 h-5" />,
+  },
+];
+
+const requisitos = [
+  'Formulario nacional de solicitud diligenciado y firmado',
+  'Información técnica del sistema de captación y conducción',
+  'Costos estimados del proyecto',
+  'Información sobre los usuarios del agua',
+  'Localización geográfica del punto de captación',
 ];
 
 export default function Decreto() {
+  const [openUso, setOpenUso] = useState<string | null>(null);
+
   return (
     <section id="decreto" className="py-24 bg-[#1B4D3E] text-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
+
+        {/* Encabezado */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-[#9ACD32] text-[#0D3328] font-bold px-4 py-2 rounded-full text-sm mb-6">
-            <CheckCircle className="w-4 h-4" />
-            VIGENTE
+            <BookOpen className="w-4 h-4" />
+            Integrante 3 · 6 minutos
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Decreto <span className="text-[#9ACD32]">1076 de 2015</span>
+            Decreto <span className="text-[#9ACD32]">1076 de 2015</span><br />
+            y concesiones de agua
           </h2>
           <div className="w-24 h-1 bg-[#9ACD32] mx-auto rounded-full mb-4" />
-          <p className="text-white/80 max-w-2xl mx-auto">
-            Decreto Unico Reglamentario del Sector Ambiente y Desarrollo Sostenible
+          <p className="text-white/80 max-w-2xl mx-auto mb-6">
+            El marco normativo que regula el uso, aprovechamiento y protección del recurso hídrico en Colombia.
+          </p>
+          <a
+            href="https://www.minambiente.gov.co/wp-content/uploads/2021/06/Decreto-1076-de-2015.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors mb-8"
+          >
+            <FileText className="w-4 h-4" />
+            Ver Decreto completo (PDF) →
+          </a>
+          <div className="flex flex-wrap justify-center gap-2">
+            {tags.map((tag) => (
+              <span key={tag} className="bg-white/10 border border-white/20 text-white/90 text-xs font-medium px-3 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Dos tarjetas — ¿Qué es el Decreto 1076? */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="bg-white/10 border border-white/20 rounded-2xl p-6">
+            <h3 className="text-lg font-bold text-[#9ACD32] mb-2">Decreto Único Reglamentario</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Reúne y organiza la regulación ambiental de Colombia en un solo instrumento jurídico.
+              Entró en vigor el 26 de mayo de 2015 y consolida normas dispersas del sector ambiente
+              y desarrollo sostenible.
+            </p>
+          </div>
+          <div className="bg-white/10 border border-white/20 rounded-2xl p-6">
+            <h3 className="text-lg font-bold text-[#9ACD32] mb-3">¿Qué regula?</h3>
+            <ul className="space-y-2">
+              {queRegula.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-white/80">
+                  <CheckCircle className="w-4 h-4 text-[#9ACD32] flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bloque destacado — Definición de concesión */}
+        <div className="bg-[#9ACD32]/20 border border-[#9ACD32]/40 rounded-2xl p-6 mb-12">
+          <span className="inline-block bg-[#9ACD32] text-[#0D3328] text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+            Definición
+          </span>
+          <p className="text-white/90 leading-relaxed">
+            Es el permiso que otorga la autoridad ambiental para usar y aprovechar el recurso hídrico,
+            ya sea superficial o subterráneo. <span className="font-bold text-[#9ACD32]">Sin concesión, el uso del agua es ilegal.</span>
           </p>
         </div>
 
-        {/* Status bar */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/20">
-            <Calendar className="w-6 h-6 text-[#9ACD32] mx-auto mb-2" />
-            <span className="block text-white/70 text-xs uppercase tracking-wider">Expedicion</span>
-            <span className="font-bold text-lg">Mayo 26, 2015</span>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/20">
-            <RefreshCw className="w-6 h-6 text-[#9ACD32] mx-auto mb-2" />
-            <span className="block text-white/70 text-xs uppercase tracking-wider">Ultima Actualizacion</span>
-            <span className="font-bold text-lg">Noviembre 2, 2025</span>
-          </div>
-          <div className="bg-[#9ACD32]/20 backdrop-blur-sm rounded-xl p-5 text-center border border-[#9ACD32]/40">
-            <CheckCircle className="w-6 h-6 text-[#9ACD32] mx-auto mb-2" />
-            <span className="block text-white/70 text-xs uppercase tracking-wider">Estado</span>
-            <span className="font-bold text-lg text-[#9ACD32]">VIGENTE</span>
-          </div>
-        </div>
-
-        {/* Chapters */}
+        {/* Usos permitidos — interactivos */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-[#9ACD32]" />
-            Capitulos Relevantes
+            <Droplets className="w-6 h-6 text-[#9ACD32]" />
+            Usos permitidos
           </h3>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-white/10">
-                    <th className="text-left p-4 text-[#9ACD32] font-bold text-sm">Capitulo</th>
-                    <th className="text-left p-4 text-[#9ACD32] font-bold text-sm">Contenido</th>
-                    <th className="text-left p-4 text-[#9ACD32] font-bold text-sm">Articulo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {capitulos.map((c, i) => (
-                    <tr key={i} className="border-t border-white/10">
-                      <td className="p-4 font-semibold text-sm">{c.nombre}</td>
-                      <td className="p-4 text-white/80 text-sm">{c.contenido}</td>
-                      <td className="p-4">
-                        <span className="bg-[#9ACD32] text-[#0D3328] font-bold text-xs px-3 py-1 rounded-full">
-                          {c.articulo}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="space-y-3">
+            {usos.map((uso) => (
+              <div key={uso.id} className="bg-white/10 border border-white/20 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenUso(openUso === uso.id ? null : uso.id)}
+                  className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/10 transition-colors"
+                >
+                  <span className="flex items-center gap-3 font-semibold text-sm">
+                    <span className="text-[#9ACD32]">{uso.icon}</span>
+                    {uso.label}
+                  </span>
+                  {openUso === uso.id
+                    ? <ChevronUp className="w-4 h-4 text-[#9ACD32] flex-shrink-0" />
+                    : <ChevronDown className="w-4 h-4 text-white/60 flex-shrink-0" />
+                  }
+                </button>
+                {openUso === uso.id && (
+                  <div className="px-5 pb-4 text-white/80 text-sm leading-relaxed border-t border-white/10 pt-3">
+                    {uso.descripcion}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Key provisions */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-[#9ACD32]" />
-              Disposiciones Clave
-            </h3>
-            <div className="space-y-3">
-              {disposiciones.map((d, i) => (
-                <div key={i} className="flex items-start gap-3 bg-white/5 rounded-lg p-4 border border-white/10">
-                  <FileCheck className="w-5 h-5 text-[#9ACD32] flex-shrink-0 mt-0.5" />
-                  <p className="text-white/90 text-sm leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <img
-              src="/decreto-legal.jpg"
-              alt="Decreto 1076 de 2015"
-              className="w-full h-full object-cover min-h-[300px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 text-white">
-              <p className="font-semibold">Decreto 1076 de 2015</p>
-              <p className="text-xs opacity-80">Unico Reglamentario del Sector Ambiente</p>
-            </div>
+        {/* Tarjeta — ¿Quién otorga la concesión? */}
+        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 mb-12">
+          <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+            <Building2 className="w-5 h-5 text-[#9ACD32]" />
+            ¿Quién otorga la concesión?
+          </h3>
+          <p className="text-white/80 text-sm mb-2 font-semibold">Corporaciones Autónomas Regionales (CAR)</p>
+          <p className="text-white/70 text-sm mb-4">Autoridades ambientales regionales, departamentales y municipales.</p>
+          <div className="bg-[#9ACD32]/20 border border-[#9ACD32]/30 rounded-xl p-4 text-sm text-white/90">
+            En el Valle del Cauca, la autoridad competente es la <span className="font-bold text-[#9ACD32]">CVC
+            (Corporación Autónoma Regional del Valle del Cauca)</span>, quien evalúa, aprueba y controla
+            las concesiones en la región.
           </div>
         </div>
+
+        {/* Lista de requisitos */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <FileText className="w-6 h-6 text-[#9ACD32]" />
+            Requisitos para solicitar una concesión
+          </h3>
+          <div className="space-y-3">
+            {requisitos.map((req) => (
+              <div key={req} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <CheckCircle className="w-5 h-5 text-[#9ACD32] flex-shrink-0 mt-0.5" />
+                <p className="text-white/90 text-sm leading-relaxed">{req}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bloque destacado — PUEAA */}
+        <div className="bg-[#9ACD32]/20 border border-[#9ACD32]/40 rounded-2xl p-6 mb-12">
+          <span className="inline-block bg-[#9ACD32] text-[#0D3328] text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+            Dato clave
+          </span>
+          <p className="text-white/90 leading-relaxed">
+            Toda concesión debe incluir un <span className="font-bold text-[#9ACD32]">Programa de Uso Eficiente
+            y Ahorro del Agua (PUEAA)</span>. No es opcional: es un requisito obligatorio por ley.
+          </p>
+        </div>
+
+        {/* Bloque de transición */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex items-start gap-4">
+          <AlertCircle className="w-6 h-6 text-[#9ACD32] flex-shrink-0 mt-0.5" />
+          <p className="text-white/80 text-sm leading-relaxed">
+            Usar el agua implica responsabilidad sobre las aguas residuales generadas. Por eso existen
+            los <span className="font-semibold text-white">permisos de vertimiento</span>, que explicará el siguiente integrante.
+          </p>
+        </div>
+
       </div>
     </section>
   );
