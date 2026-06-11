@@ -93,7 +93,7 @@ export default function Cali() {
           <div className="space-y-6">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="src/components/IMG/PTAR_Cañaveralejo.jpg"
+                src={`${import.meta.env.BASE_URL}PTAR_Cañaveralejo.jpg`}
                 alt="Cali - PTAR Canaveralejo"
                 className="w-full h-full object-cover min-h-[400px]"
               />
@@ -106,7 +106,7 @@ export default function Cali() {
 
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="src/components/IMG/Rio_Cali.jpg"
+                src={`${import.meta.env.BASE_URL}Rio_Cali.JPG`}
                 alt="Cali - Rio Cali"
                 className="w-full h-full object-cover min-h-[400px]"
               />
