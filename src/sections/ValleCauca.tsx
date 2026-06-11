@@ -1,10 +1,10 @@
 import { MapPin, AlertTriangle, Gavel, TrendingDown } from 'lucide-react';
 
 const problemas = [
-  'Comunidades rurales del Valle denuncian falta de inversiones y retrasos en proyectos de agua',
-  'Alertas sobre deficit hidrico en la region',
-  'Necesidad de infraestructura de tratamiento y distribucion de agua',
-  'Presion sobre cuencas hidrograficas por actividad agricola e industrial',
+  "Persisten necesidades de inversión y modernización en algunos acueductos rurales para garantizar agua potable de calidad.",
+  "Las sequías asociadas al fenómeno de El Niño generan riesgo de déficit hídrico en varias cuencas del departamento.",
+  "Se requiere fortalecer y modernizar los sistemas de tratamiento y distribución de agua para mejorar la cobertura y calidad del servicio.",
+  "Las cuencas hidrográficas enfrentan presión por la demanda de agua de actividades agrícolas, agroindustriales, industriales y urbanas."
 ];
 
 export default function ValleCauca() {
@@ -26,7 +26,7 @@ export default function ValleCauca() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
             <img
-              src={`${import.meta.env.BASE_URL}valle-cauca.jpg`}
+              src="src/components/IMG/rio-cauca.jpg"
               alt="Valle del Cauca"
               className="w-full h-80 object-cover"
             />
@@ -45,8 +45,7 @@ export default function ValleCauca() {
                 Autoridad Ambiental
               </h4>
               <p className="text-gray-700 text-sm">
-                En el Valle del Cauca opera el <strong>Area Metropolitana del Valle de Aburra (AMVA)</strong> como 
-                autoridad ambiental para concesiones, ademas de la <strong>CVC</strong> como Corporacion Autonoma Regional.
+                En el departamento, la <strong>CVC</strong> (Corporación Autónoma Regional del Valle del Cauca) es la máxima autoridad encargada de administrar los recursos naturales, regular las concesiones de agua y otorgar los permisos de vertimiento. En el área urbana de Cali, esta función la cumple el <strong>DAGMA</strong>.
               </p>
             </div>
 
@@ -56,8 +55,7 @@ export default function ValleCauca() {
                 Sentencia No. 192
               </h4>
               <p className="text-gray-700 text-sm">
-                El Tribunal Administrativo del Valle del Cauca emitio la <strong>sentencia No. 192</strong> sobre 
-                el derecho humano al agua, estableciendo importantes precedentes para la region.
+                El Tribunal Administrativo del Valle del Cauca emitió la <strong>sentencia No. 192</strong> sobre el derecho humano al agua, estableciendo un precedente histórico que obliga a priorizar el consumo humano sobre el uso industrial y agrícola en la región.
               </p>
             </div>
 
