@@ -35,20 +35,6 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
-      {/* Gov.co bar */}
-      <div className="bg-[#3366CC] text-white text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="font-bold tracking-wide">GOV.CO</span>
-            <span className="hidden sm:inline opacity-80">|</span>
-            <span className="hidden sm:inline opacity-90">Portal oficial del Estado Colombiano</span>
-          </div>
-          <div className="hidden md:flex items-center gap-4">
-            <span>2026</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main nav */}
       <nav className={`transition-all duration-300 ${scrolled ? 'bg-[#1B4D3E]/95 backdrop-blur-md' : 'bg-[#1B4D3E]'}`}>
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
