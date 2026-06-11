@@ -3,7 +3,6 @@ import Hero from './sections/Hero';
 import Teoria from './sections/Teoria';
 import Mundial from './sections/Mundial';
 import Colombia from './sections/Colombia';
-import Concesiones from './sections/Concesiones';
 import Vertimientos from './sections/Vertimientos';
 import Decreto from './sections/Decreto';
 import ValleCauca from './sections/ValleCauca';
@@ -24,7 +23,6 @@ function App() {
         </div>
         <Mundial />
         <Colombia />
-        <Concesiones />
         <Vertimientos />
         <Decreto />
         <ValleCauca />

@@ -6,8 +6,8 @@ const acordeonData = [
     id: 'constitucional',
     icon: Scale,
     title: 'Reconocimiento Constitucional',
-    content: `El derecho humano al agua esta establecido en la Constitucion Politica desde el 8 de febrero de 2012, a partir de la reforma del articulo cuarto. La Corte Constitucional ha creado una linea jurisprudencial solida protegiendo el derecho al agua, especialmente respecto a la suspension del servicio por falta de pago.`,
-    highlight: 'Desde febrero de 2012',
+    content: `En Colombia no existe un derecho constitucional explícito al agua en la Constitución de 1991 (es decir, no hay un artículo que diga "se reconoce el derecho al agua" como derecho autónomo), pero la Corte Constitucional ha reconocido constitucionalmente el acceso al agua potable como un derecho fundamental autónomo, derivado de los derechos a la vida, la salud y la dignidad humana.`,
+    highlight: 'Reconocimiento jurisprudencial',
   },
   {
     id: 'minimo-vital',
@@ -79,7 +79,7 @@ export default function Colombia() {
 
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/decreto-legal.jpg"
+                src={`${import.meta.env.BASE_URL}decreto-legal.jpg`}
                 alt="Marco legal colombiano"
                 className="w-full h-56 object-cover"
               />

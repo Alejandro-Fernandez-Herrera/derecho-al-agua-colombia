@@ -26,7 +26,7 @@ export default function ValleCauca() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
             <img
-              src="/valle-cauca.jpg"
+              src={`${import.meta.env.BASE_URL}valle-cauca.jpg`}
               alt="Valle del Cauca"
               className="w-full h-80 object-cover"
             />

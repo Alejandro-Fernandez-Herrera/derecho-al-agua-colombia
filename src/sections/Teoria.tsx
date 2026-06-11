@@ -79,7 +79,7 @@ export default function Teoria() {
           <div className="space-y-6">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/colombia-justice.jpg"
+                src={`${import.meta.env.BASE_URL}colombia-justice.jpg`}
                 alt="Corte Constitucional de Colombia"
                 className="w-full h-72 object-cover"
               />
