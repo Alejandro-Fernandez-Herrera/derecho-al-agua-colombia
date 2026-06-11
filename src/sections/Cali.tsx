@@ -95,7 +95,7 @@ export default function Cali() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="/cali-city.jpg"
+              src={`${import.meta.env.BASE_URL}cali-city.jpg`}
               alt="Cali - Rio Cali"
               className="w-full h-full object-cover min-h-[400px]"
             />

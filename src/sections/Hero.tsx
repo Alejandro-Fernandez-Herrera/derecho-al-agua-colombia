@@ -37,7 +37,7 @@ export default function Hero() {
         style={{ transform: 'translateY(var(--scroll, 0))' }}
       >
         <img
-          src="/hero-water.jpg"
+          src={`${import.meta.env.BASE_URL}hero-water.jpg`}
           alt="Rio del Valle del Cauca"
           className="w-full h-[120%] object-cover"
         />
@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-48 text-center">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-[#9ACD32] rounded-full animate-pulse" />
-          <span className="text-white/90 text-sm font-medium">Portal Informativo Institucional</span>
+          <span className="text-white/90 text-sm font-medium">Ejercicio pedagógico para la cátedra Seminario de constitución, legislación y ética</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold text-white text-shadow-lg mb-6 leading-tight">

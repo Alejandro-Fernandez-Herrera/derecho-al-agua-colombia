@@ -71,7 +71,7 @@ export default function Mundial() {
           <div className="space-y-6">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/vertimiento-ind.jpg"
+                src={`${import.meta.env.BASE_URL}vertimiento-ind.jpg`}
                 alt="Tratamiento de aguas"
                 className="w-full h-64 object-cover"
               />

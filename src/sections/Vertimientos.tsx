@@ -59,7 +59,7 @@ export default function Vertimientos() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="/vertimiento-ind.jpg"
+              src={`${import.meta.env.BASE_URL}vertimiento-ind.jpg`}
               alt="Planta de tratamiento de aguas residuales"
               className="w-full h-full object-cover min-h-[300px]"
             />
