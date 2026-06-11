@@ -1,15 +1,15 @@
 import { AlertTriangle, Users, Wrench, Flame } from 'lucide-react';
 
 const denuncias = [
-  'Comunidades rurales de Cali denuncian falta de inversiones en proyectos hidricos',
-  'En mayo 2026 se alerto que Cali y Valle del Cauca seran "un horno" en meses secos sin aprovechar las lluvias',
-  'Retrasos en la ejecucion de obras criticas de infraestructura de agua',
+  'Algunas comunidades rurales han manifestado la necesidad de fortalecer las inversiones en acueductos y sistemas de abastecimiento de agua.',
+  'Las temporadas secas asociadas al fenomeno de El Niño aumentan el riesgo de estres hidrico en la region.',
+  'Algunos proyectos de infraestructura hidrica enfrentan retos relacionados con financiacion y ejecucion.',
 ];
 
 const marcos = [
-  'El derecho al agua se ha convertido en tema de movilizacion social',
-  'Consignas como "El agua es un derecho, no un privilegio"',
-  'La implementacion del minimo vital en Cali sigue patrones de focalizacion con requisitos de acuerdo de pago',
+  'El derecho al agua se ha convertido en un tema importante de movilizacion social.',
+  'Diversos sectores promueven la consigna: "El agua es un derecho, no un privilegio".',
+  'Existen programas y politicas orientadas a garantizar el acceso al agua para poblaciones vulnerables.',
 ];
 
 export default function Cali() {
@@ -35,8 +35,10 @@ export default function Cali() {
           <div>
             <h4 className="font-bold text-red-700 text-lg mb-1">Alerta: Crisis Hidrica Actual</h4>
             <p className="text-red-600 text-sm leading-relaxed">
-              Cali enfrenta una crisis de agua con serios cuestionamientos a gobernantes sobre proyectos hidricos. 
-              El deficit hidrico amenaza el abastecimiento para la poblacion en los proximos meses secos.
+              Cali enfrenta desafios en la gestion sostenible del recurso hidrico,
+              especialmente durante periodos de sequia asociados al fenomeno de El Niño.
+              Esto resalta la importancia de proteger las fuentes de agua y fortalecer
+              la planificacion para garantizar el abastecimiento futuro.
             </p>
           </div>
         </div>
@@ -51,9 +53,9 @@ export default function Cali() {
                 PTAR Canaveralejo
               </h4>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Existe el proyecto importante de la <strong>Planta de Tratamiento de Aguas Residuales (PTAR) Canaveralejo</strong>, 
-                una obra critica para el manejo sostenible del agua en la ciudad, aunque su implementacion 
-                enfrenta desafios de financiamiento y ejecucion.
+                La Planta de Tratamiento de Aguas Residuales (PTAR) Canaveralejo es una infraestructura
+                fundamental para el tratamiento de aguas residuales de Cali. Su operacion contribuye a la
+                proteccion del rio Cauca y al mejoramiento de la calidad ambiental de la region.
               </p>
             </div>
 
@@ -95,14 +97,14 @@ export default function Cali() {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src={`${import.meta.env.BASE_URL}cali-city.jpg`}
+              src="src/components/IMG/Rio_Cali.jpg"
               alt="Cali - Rio Cali"
               className="w-full h-full object-cover min-h-[400px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <p className="font-semibold">Cali - Rio Cali</p>
-              <p className="text-xs opacity-80">La ciudad enfrenta desafios criticos de abastecimiento de agua</p>
+              <p className="text-xs opacity-80">Cali trabaja en la proteccion de sus fuentes hidricas y en la gestion sostenible del agua.</p>
             </div>
           </div>
         </div>
