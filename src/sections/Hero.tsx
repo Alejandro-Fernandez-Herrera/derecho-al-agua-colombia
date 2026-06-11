@@ -29,7 +29,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background image with parallax */}
       <div
         ref={heroRef}
@@ -45,7 +45,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-48 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-32 pb-12 text-center">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-[#9ACD32] rounded-full animate-pulse" />
           <span className="text-white/90 text-sm font-medium">Ejercicio pedagógico para la cátedra Seminario de constitución, legislación y ética</span>
@@ -80,7 +80,7 @@ export default function Hero() {
       </div>
 
       {/* Quick Access Cards */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-1/2">
+      <div className="relative z-20 w-full pb-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {quickCards.map((card) => (
@@ -104,7 +104,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <ChevronDown className="w-8 h-8 text-white/70" />
       </div>
     </section>

@@ -1,4 +1,5 @@
-import { CheckCircle, Droplets, Shield, Wallet, Accessibility } from 'lucide-react';
+import { useState } from 'react';
+import { CheckCircle, Droplets, Shield, Wallet, Accessibility, Play, Globe, Scale } from 'lucide-react';
 
 const caracteristicas = [
   { icon: Droplets, label: 'Suficiente', desc: 'Cantidad adecuada para consumo personal y domestico', detail: '50-100 litros por persona/dia', color: 'bg-blue-50 text-blue-600' },
@@ -21,6 +22,29 @@ export default function Teoria() {
             Que es el <span className="text-[#1B4D3E]">Derecho Humano al Agua</span>?
           </h2>
           <div className="w-24 h-1 bg-[#9ACD32] mx-auto rounded-full" />
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-200 bg-white">
+              <div className="w-10 h-10 bg-[#1B4D3E] rounded-full flex items-center justify-center flex-shrink-0">
+                <Play className="w-5 h-5 text-[#9ACD32] fill-[#9ACD32]" />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 text-sm">Video Explicativo</h4>
+                <p className="text-gray-500 text-xs">Que es el derecho al agua? - Introduccion a los Derechos Humanos</p>
+              </div>
+            </div>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/wPlqVyT0zgk"
+                title="Que es el derecho al agua - Introduccion a los Derechos Humanos"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -91,33 +115,119 @@ export default function Teoria() {
             </div>
 
             {/* Timeline */}
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h4 className="font-bold text-gray-900 mb-4">Linea de Tiempo - Reconocimiento</h4>
-              <div className="space-y-4">
-                {[
-                  { year: '1948', text: 'Declaracion Universal de Derechos Humanos: derecho a un nivel de vida adecuado, incluye el agua de forma implicita' },
-                  { year: '1992', text: 'Corte Constitucional (T-570/92) protege el agua via doctrina de conexidad con la vida y la salud' },
-                  { year: '2002', text: 'Comite de Derechos Economicos (ONU) emite Observacion General No. 15: define las 5 caracteristicas esenciales del derecho' },
-                  { year: '2010', text: 'ONU reconoce formalmente el derecho humano al agua (Res. A/64/L.63/Rev.1)' },
-                  { year: '2010', text: 'Corte Constitucional (T-418/10) declara el agua potable como Derecho Fundamental Autonomo' },
-                  { year: '2011', text: 'Corte Constitucional (T-740/11) prohibe corte total a sujetos vulnerables y ordena garantizar Minimo Vital de agua' },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="flex flex-col items-center">
-                      <div className="w-3 h-3 bg-[#9ACD32] rounded-full" />
-                      {i < 5 && <div className="w-0.5 h-full bg-gray-200" />}
-                    </div>
-                    <div className="pb-4">
-                      <span className="font-bold text-[#1B4D3E] text-sm">{item.year}</span>
-                      <p className="text-gray-600 text-xs mt-0.5">{item.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <TimelineTabs />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function TimelineTabs() {
+  const [activeTab, setActiveTab] = useState<'international' | 'colombia'>('international');
+
+  const internationalTimeline = [
+    { year: '1948', text: 'Declaracion Universal de Derechos Humanos: inclusion implicita del agua dentro del derecho a un nivel de vida adecuado' },
+    { year: '2002', text: 'Observacion General No. 15 (Comite DESC - ONU): primer documento que delimita el contenido normativo, obligaciones de los Estados y define las 5 caracteristicas esenciales' },
+    { year: '2010', text: 'Resolucion 64/292 de la Asamblea General de la ONU: reconocimiento explicito del agua potable y saneamiento como derecho humano esencial' },
+    { year: '2015', text: 'Resolucion 70/169 de la Asamblea General: define el derecho al agua y saneamiento como derechos autonomos, interrelacionados pero con tratamiento diferenciado' },
+    { year: 'Transversal', text: 'Tratados especificos: Convencion sobre Derechos del Nino (Art. 24), CEDAW (Art. 14) y CRPD para personas con discapacidad (Art. 28)' },
+  ];
+
+  const colombiaTimeline = [
+    { year: '1991', text: 'Fundamento Constitucional: no explicito en texto original; se deriva de los Arts. 49 (salud y saneamiento), 79 (ambiente sano) y 366 (bienestar general y prioridad del gasto publico social)', isHighlight: true },
+    { year: '1992', text: 'Epoca de la Conexidad (T-406/92 y T-578/92): Corte protege el agua solo si su ausencia amenaza derechos fundamentales escritos como vida o salud' },
+    { year: '2010', text: 'Autonomia Fundamental (T-418/10): Corte declara formalmente el agua potable para consumo humano como Derecho Fundamental Autonomo' },
+    { year: '2011', text: 'Minimo Vital y Proteccion (T-740/11): prohibe corte total a poblaciones vulnerables ante no pago; fija estandar de 50 litros diarios por persona' },
+    { year: '2022-2026', text: 'Plan Nacional de Desarrollo (Ley 2294 de 2023): eleva el agua a eje transversal de politica publica bajo pilar de Ordenamiento del territorio alrededor del agua' },
+    { year: 'Actualidad', text: 'Tres Dimensiones: jurisprudencia ampara el agua bajo enfoques Individual (dignidad humana), Etnico-territorial (pueblos indigenas y afro) y Ecologico (cuerpos de agua como sujetos de derechos, ej. Rio Atrato)' },
+  ];
+
+  return (
+    <div className="bg-gray-50 rounded-xl p-6">
+      <h4 className="font-bold text-gray-900 mb-4">Linea de Tiempo - Reconocimiento</h4>
+      
+      <div className="flex gap-2 mb-6">
+        <button
+          onClick={() => setActiveTab('international')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+            activeTab === 'international'
+              ? 'bg-blue-500 text-white shadow-md'
+              : 'bg-white text-gray-600 hover:bg-gray-100'
+          }`}
+        >
+          <Globe className="w-4 h-4" />
+          Internacional
+        </button>
+        <button
+          onClick={() => setActiveTab('colombia')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+            activeTab === 'colombia'
+              ? 'bg-[#1B4D3E] text-white shadow-md'
+              : 'bg-white text-gray-600 hover:bg-gray-100'
+          }`}
+        >
+          <Scale className="w-4 h-4" />
+          Colombia
+        </button>
+      </div>
+
+      <div className="relative min-h-[400px]">
+        <div
+          className={`absolute inset-0 transition-all duration-300 ${
+            activeTab === 'international'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-4 pointer-events-none'
+          }`}
+        >
+          <div className="space-y-4">
+            {internationalTimeline.map((item, i) => (
+              <div key={i} className="flex gap-3">
+                <div className="flex flex-col items-center">
+                  <div className="w-2.5 h-2.5 bg-blue-500 rounded-full mt-1.5" />
+                  {i < internationalTimeline.length - 1 && <div className="w-0.5 h-full bg-blue-200" />}
+                </div>
+                <div className="pb-3">
+                  <span className="font-bold text-blue-700 text-xs">{item.year}</span>
+                  <p className="text-gray-600 text-xs mt-0.5">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={`absolute inset-0 transition-all duration-300 ${
+            activeTab === 'colombia'
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 translate-x-4 pointer-events-none'
+          }`}
+        >
+          <div className="space-y-4">
+            {colombiaTimeline.map((item, i) => (
+              <div key={i} className="flex gap-3">
+                <div className="flex flex-col items-center">
+                  <div className="w-2.5 h-2.5 bg-[#1B4D3E] rounded-full mt-1.5" />
+                  {i < colombiaTimeline.length - 1 && <div className="w-0.5 h-full bg-[#9ACD32]/30" />}
+                </div>
+                <div className="pb-3">
+                  {item.isHighlight ? (
+                    <div className="bg-[#E8F5E9] rounded-lg p-2 border-l-2 border-[#1B4D3E]">
+                      <span className="font-bold text-[#1B4D3E] text-xs">{item.year}</span>
+                      <p className="text-gray-600 text-xs mt-0.5">{item.text}</p>
+                    </div>
+                  ) : (
+                    <>
+                      <span className="font-bold text-[#1B4D3E] text-xs">{item.year}</span>
+                      <p className="text-gray-600 text-xs mt-0.5">{item.text}</p>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
