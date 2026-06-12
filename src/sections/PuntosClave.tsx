@@ -22,7 +22,7 @@ const puntos = [
   {
     icon: Users,
     title: 'Millones Sin Acceso',
-    desc: 'Mas de 5 millones de colombianos sin acceso a agua potable demuestra la brecha de implementacion y la urgencia de acciones concretas.',
+    desc: 'Mas de 7 millones de colombianos sin acceso a agua potable demuestra la brecha de implementacion y la urgencia de acciones concretas.',
     color: 'bg-red-50 text-red-600',
   },
 ];
